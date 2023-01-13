@@ -1,7 +1,7 @@
 import { Client } from "@notionhq/client";
 
 const NOTION_KEY = "secret_V9uPJzEiwaRdZS10KH0iRdbeWpS9LxkwZswLZ0mrh7A";
-const NOTION_DATABASE_ID = "5852f47439464f1b8ae4e67e7fe209cd";
+const NOTION_DATABASE_ID = "ce592fffd6cb4159ad2c78b1e63cf9f7";
 
 const notion = new Client({ auth: NOTION_KEY });
 
@@ -29,5 +29,14 @@ async function addItem(text) {
     console.error(error.body);
   }
 }
-`zxcvb`
-addItem("Yurts in Big Sur, California");
+
+async function queryPage() {
+  try {
+    const response = await notion.databases.query({
+      database_id: databaseId,
+    });
+    console.log(response);
+  } catch (error) {}
+}
+
+queryPage();
