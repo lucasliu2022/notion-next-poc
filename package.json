@@ -1,0 +1,12 @@
+{
+  "name": "notion-next-poc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:lucasliu2022/notion-next-poc.git",
+  "author": "lcbyfc <lcbyfc@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@notionhq/client": "^2.2.3"
+  }
+}
