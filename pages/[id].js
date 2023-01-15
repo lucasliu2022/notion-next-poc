@@ -160,16 +160,18 @@ export default function Post({ page, blocks }) {
   if (!page || !blocks) {
     return <div />;
   }
+
+  console.log(page)
   return (
     <div>
       <Head>
-        <title>{page.properties.title.title[0].plain_text}</title>
+        <title>{page.properties.Title.title[0].text.content}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <article className={styles.container}>
         <h1 className={styles.name}>
-          <Text text={page.properties.Name.title} />
+          <Text text={page.properties.Title.title} />
         </h1>
         <section>
           {blocks.map((block) => (
