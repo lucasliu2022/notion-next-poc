@@ -7,6 +7,7 @@ import styles from "./index.module.css";
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
 export default function Home({ posts }) {
+  console.log("posts", posts);
   return (
     <div>
       <Head>
@@ -79,11 +80,12 @@ export default function Home({ posts }) {
               <li key={post.id} className={styles.post}>
                 <h3 className={styles.postTitle}>
                   <Link href={`/${post.id}`}>
-                    <Text text={post.properties.Name.title} />
+                    <Text text={post.properties.title?.title} />
                   </Link>
                 </h3>
 
                 <p className={styles.postDescription}>{date}</p>
+                <p>{post.properties.Title.title[0].text.content}</p>
                 <Link href={`/${post.id}`}>Read post →</Link>
               </li>
             );
